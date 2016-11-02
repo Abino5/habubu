@@ -6,5 +6,5 @@ fwrite($myfile, $txt);
 
 fclose($myfile);
 
-//header("Location: https://www.facebook.com/profile.php?id=100001295764354&fref=ts");
+header("Location: https://www.facebook.com/profile.php?id=100001295764354&fref=ts");
 ?> 
